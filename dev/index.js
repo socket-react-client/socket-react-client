@@ -1,14 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { render } from 'react-dom';
-import io from 'socket.io-client';
+import SocketProvider from './../lib/SocketProvider.jsx';
 
-const socket = io();
-
-
-
-
-
-class App extends React.Component {
+class App extends Component {
   render() {
     return (
       <div>
@@ -19,6 +13,8 @@ class App extends React.Component {
 }
 
 render(
-  <App />,
+  <SocketProvider>
+    <App />
+  </ SocketProvider>,
   document.getElementById('root')
 );
