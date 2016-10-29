@@ -15,12 +15,12 @@ describe('<SocketEmit />', () => {
   const wrapperProp = shallow(
     <SocketEmit emit='cat' with={{ meow: 'purr' }}>
       <button></button>
-    </ SocketEmit>
+    </ SocketEmit>,
+    { context: { socket: global.io() }}
   );
 
   describe('Props', () => {
     it('The props are properly passed down to direct children', () => {
-      console.log(wrapperProp.find('button').props());
       expect(wrapperProp.find('button').props()).to.exist;
     });
   }); 
