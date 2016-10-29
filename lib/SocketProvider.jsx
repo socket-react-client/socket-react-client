@@ -16,7 +16,7 @@ class SocketProvider extends Component {
      **/
     getChildContext() {
         return {
-            socket: this.props.socket(this.props.url || '')
+            socket: this.props.socket(this.props.uri || '')
         };
     }
 
@@ -27,7 +27,7 @@ class SocketProvider extends Component {
 
 SocketProvider.propTypes = {
     socket: PropTypes.func.isRequired,
-    url: PropTypes.string
+    uri: PropTypes.string
 };
 
 SocketProvider.childContextTypes = {
