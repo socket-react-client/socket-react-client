@@ -16,17 +16,18 @@ class SocketProvider extends Component {
      **/
     getChildContext() {
         return {
-            socket: this.props.socket
+            socket: this.props.socket(this.props.url || '')
         };
     }
 
     render() {
-        return this.props.children;
+        return this.props.children || null;
     }
 }
 
 SocketProvider.propTypes = {
-    socket: PropTypes.object.isRequired
+    socket: PropTypes.func.isRequired,
+    url: PropTypes.string
 };
 
 SocketProvider.childContextTypes = {
@@ -34,7 +35,7 @@ SocketProvider.childContextTypes = {
 };
 
 SocketProvider.defaultProps = {
-    socket: io()
+    socket: io
 };
 
-export default SocketProvider;
+module.exports = SocketProvider;
