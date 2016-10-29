@@ -10,10 +10,10 @@ import React, { Children, cloneElement, Component, PropTypes } from 'react';
 
 class SocketEmit extends Component {
   /**
-   * Emits an event to socket after receiving name and data props
+   * Emits an event to socket after receiving name of event and data props
    */
   emit() {
-    this.context.socket.emit(this.props.name, this.props.data);
+    this.context.socket.emit(this.props.emit, this.props.with);
   }
 
   /**
@@ -31,8 +31,8 @@ class SocketEmit extends Component {
 }
 
 SocketEmit.propTypes = {
-  name: PropTypes.string.isRequired,
-  data: PropTypes.any
+  emit: PropTypes.string.isRequired,
+  with: PropTypes.any
 };
 
 SocketEmit.contextTypes = {

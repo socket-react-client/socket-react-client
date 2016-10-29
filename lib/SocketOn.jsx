@@ -10,7 +10,7 @@ import React, { Component, PropTypes } from 'react';
 
 class SocketOn extends Component {
   componentDidMount() {
-    this.on(this.props.name, this.props.callback);
+    this.listen(this.props.on, this.props.do);
   }
 
   /**
@@ -18,23 +18,22 @@ class SocketOn extends Component {
    * @param {string} name - name of the event emitter
    * @param {function} callback - invoked on receiving event
    */
-  on(name, callback) {
+  listen(name, callback) {
     this.context.socket.on(name, callback);
   }
 
   render() {
-    return this.props.children;
+    return this.props.children || null;
   }
 };
 
 SocketOn.propTypes = {
-  name: PropTypes.string.isRequired,
-  callback: PropTypes.func.isRequired
+  on: PropTypes.string.isRequired,
+  do: PropTypes.func.isRequired
 };
 
 SocketOn.contextTypes = {
   socket: PropTypes.object.isRequired
 };
-
 
 export default SocketOn;
