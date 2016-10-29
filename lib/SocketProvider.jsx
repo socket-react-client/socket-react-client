@@ -1,3 +1,10 @@
+/**
+ * Initializes socket connection through socket.io
+ * 
+ * @author - Dean Edwards (dmedwards4@gmail.com)
+ * @author - Cheng Ly (chengsieuly@gmail.com)
+ * @author - Michael Sotkin (michael.sotkin@gmail.com)
+ */
 import React, { Component, PropTypes } from 'react';
 import io from 'socket.io-client';
 
