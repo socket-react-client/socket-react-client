@@ -34,11 +34,11 @@ class App extends Component {
   render() {
     return (
       <div>
-        <SocketEmit name='hello' data={{ hello: 'world' }}>
+        <SocketEmit emit='hello' with={{ hello: 'world' }}>
           <Button />
           <Button />
         </SocketEmit>
-        <SocketOn name='world' callback={this.update} />
+        <SocketOn on='world' do={this.update} />
       </div>
     );
   }
@@ -52,17 +52,17 @@ class App extends Component {
 - uri: The uri in which the socket connection is made
 
 ### #SocketEmit
-#### props: name(String), [data(any)]
-- name: The name of the event to emit
-- data: The data to pass to listeners
+#### props: emit(String), [with(any)]
+- emit: The name of the event to emit
+- with: The data to pass to listeners
 
 #### child props: emit(func)
 - emit: Callback to emit message 
 
 ### #SocketOn
 #### props: name(String), [callback(func)]
-- name: The name of the event to listen to
-- callback: The function to run upon receiving event
+- on: The name of the event to listen to
+- do: The function to run upon receiving event
 
 ## Running in Development
 
