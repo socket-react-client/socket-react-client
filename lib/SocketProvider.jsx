@@ -38,4 +38,4 @@ SocketProvider.defaultProps = {
     socket: io
 };
 
-export default SocketProvider;
+module.exports = SocketProvider;

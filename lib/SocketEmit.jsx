@@ -39,4 +39,4 @@ SocketEmit.contextTypes = {
   socket: PropTypes.object.isRequired
 };
 
-export default SocketEmit;
+module.exports = SocketEmit;

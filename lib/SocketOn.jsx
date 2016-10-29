@@ -36,4 +36,4 @@ SocketOn.contextTypes = {
   socket: PropTypes.object.isRequired
 };
 
-export default SocketOn;
+module.exports = SocketOn;
